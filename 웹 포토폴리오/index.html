@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="한슬기 디자인 포트폴리오 — 그래픽, 편집, 웹 디자인 작업을 모았습니다." />
+  <title>한슬기 — 디자인 포트폴리오 2026</title>
+  <style>
+    :root{
+      color-scheme:light;
+      --ink:#30282a;
+      --muted:#73666b;
+      --rose:#ef6f9a;
+      --violet:#9872d8;
+      --line:rgba(255,255,255,.72);
+      --pad:clamp(20px,5vw,72px);
+    }
+    *{box-sizing:border-box}
+    html{min-height:100%;background:#f5e9ee}
+    body{min-height:100svh;margin:0;overflow-x:clip;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR","Segoe UI",sans-serif;line-height:1.5;letter-spacing:-.025em}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .hero{position:relative;isolation:isolate;min-height:100svh;overflow:hidden;padding:max(22px,env(safe-area-inset-top)) var(--pad) max(24px,env(safe-area-inset-bottom));background:radial-gradient(ellipse at 18% 12%,rgba(255,255,255,.82) 0,transparent 39%),radial-gradient(ellipse at 84% 86%,rgba(224,187,207,.56) 0,transparent 43%),linear-gradient(135deg,#f4e9ed,#f7e5ec 52%,#eee3ef)}
+    .hero::before{content:"";position:absolute;z-index:-1;inset:-15%;pointer-events:none;opacity:.7;background:radial-gradient(ellipse at 10% 35%,transparent 0 31%,rgba(255,255,255,.34) 31.1% 31.2%,transparent 31.3%),radial-gradient(ellipse at 88% 62%,transparent 0 34%,rgba(255,255,255,.32) 34.1% 34.2%,transparent 34.3%)}
+    .topline{position:relative;z-index:2;width:100%;display:flex;justify-content:space-between;gap:16px;color:#65565e;font-size:11px;font-weight:550;letter-spacing:.08em}
+    .desktop-space{position:relative;width:min(1160px,100%);margin:32px auto 0;display:flex;flex-direction:column;align-items:center}
+    .center-folder{position:relative;flex:none;width:clamp(390px,44vw,570px);height:clamp(300px,43vh,390px);margin:22px auto 64px;filter:drop-shadow(0 28px 30px rgba(151,61,91,.18))}
+    .center-folder::before{content:"";position:absolute;z-index:0;left:0;top:0;width:38%;height:19%;border:1px solid rgba(255,255,255,.75);border-bottom:0;border-radius:24px 22px 0 0;background:linear-gradient(145deg,#ffafca,#f779a2 62%,#ec628e)}
+    .center-folder::after{content:"";position:absolute;z-index:1;inset:9% 0 0;border:1px solid rgba(255,255,255,.8);border-radius:24px 24px 30px 30px;background:linear-gradient(145deg,rgba(255,255,255,.4),transparent 28%),linear-gradient(155deg,#ff8fb5,#f46f9c 68%,#ee638f);box-shadow:inset 0 2px 2px rgba(255,255,255,.55),inset 0 -3px 0 rgba(183,62,103,.12)}
+    .folder-back{position:absolute;z-index:-1;left:50%;top:50%;width:89%;height:89%;transform:translate(-52%,-55%) rotate(-1.5deg);border-radius:24px 24px 28px 28px;background:linear-gradient(145deg,#f779a2,#e95e8a);box-shadow:inset 0 2px 2px rgba(255,255,255,.6)}
+    .center-folder-copy{position:absolute;z-index:2;inset:27% 9% 10%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fffdfa;text-shadow:0 1px 10px rgba(137,42,77,.14)}
+    .center-folder-copy .eyebrow{margin:0 0 16px;font-size:11px;letter-spacing:.19em}
+    .center-folder-copy h1{max-width:500px;margin:0;font-size:clamp(30px,4.2vw,55px);font-weight:560;line-height:1.17;letter-spacing:-.06em;word-break:keep-all}
+    .center-folder-copy p{margin:15px 0 0;font-size:clamp(12px,1.2vw,16px);letter-spacing:.02em}
+    .idea-card{position:absolute;z-index:3;top:-2%;display:grid;gap:4px;width:clamp(108px,12vw,142px);min-height:76px;padding:11px 13px;border:1px solid rgba(100,71,83,.16);border-radius:11px;background:rgba(255,253,250,.96);box-shadow:0 12px 22px rgba(93,56,72,.15);color:#47383e;animation:idea-rise .65s cubic-bezier(.2,.75,.25,1) both}
+    .idea-card strong{font-size:15px;font-weight:700;letter-spacing:.02em}
+    .idea-card span{color:#7b6d72;font-size:9px;letter-spacing:.02em}
+    .idea-card::before{content:"";position:absolute;top:8px;right:9px;width:6px;height:6px;border-radius:50%;background:#e87b9e;box-shadow:0 0 0 3px rgba(232,123,158,.13)}
+    .idea-card-design{left:7%;transform:rotate(-7deg);animation-delay:.08s}
+    .idea-card-plan{left:50%;top:-9%;transform:translateX(-50%) rotate(2deg);animation-delay:.2s}
+    .idea-card-make{right:7%;transform:rotate(6deg);animation-delay:.32s}
+    @keyframes idea-rise{from{opacity:0;translate:0 18px}to{opacity:1;translate:0 0}}
+    .portfolio-nav{position:relative;z-index:5;display:grid;gap:12px;width:min(680px,100%);margin:0 auto}
+    .folder-link,.about-toggle{position:relative;z-index:4;display:flex;align-items:center;gap:18px;width:100%;min-height:90px;padding:11px 22px;border:1px solid rgba(255,255,255,.78);border-radius:18px;background:rgba(255,253,250,.52);backdrop-filter:blur(8px);box-shadow:0 10px 28px rgba(117,66,86,.06);color:#332d30;font-size:13px;text-align:left;cursor:pointer;touch-action:manipulation;transition:transform .25s ease,background .25s ease,box-shadow .25s ease}
+    .folder-link:hover,.about-toggle:hover{transform:translateY(-2px);background:rgba(255,253,250,.82);box-shadow:0 16px 34px rgba(117,66,86,.12)}
+    .folder-link:focus-visible,.about-toggle:focus-visible,.dock-contact:focus-visible,.about-close:focus-visible{outline:3px solid #74394b;outline-offset:5px}
+    .folder-icon{position:relative;display:block;width:80px;height:58px;flex:0 0 80px;filter:drop-shadow(0 8px 8px rgba(133,49,77,.18))}
+    .folder-icon::before{content:"";position:absolute;z-index:0;top:3px;left:0;width:45%;height:22px;border:1px solid rgba(255,255,255,.7);border-bottom:0;border-radius:10px 10px 0 0;background:linear-gradient(145deg,#ffadc7,#f66f9b)}
+    .folder-icon::after{content:"";position:absolute;z-index:1;inset:14px 0 0;border:1px solid rgba(255,255,255,.74);border-radius:8px 9px 10px 10px;background:linear-gradient(145deg,rgba(255,255,255,.42),transparent 55%),linear-gradient(145deg,#fb8fb1,#ef6492);box-shadow:inset 0 2px 2px rgba(255,255,255,.56),inset 0 -2px 0 rgba(183,62,103,.12)}
+    .folder-link-graphic,.folder-link-editorial,.folder-link-digital,.folder-link-about{align-self:stretch}
+    .folder-link-copy{display:grid;gap:3px}
+    .folder-link-copy strong{font-size:14px;font-weight:650}
+    .folder-link-copy small{color:#786c70;font-size:10px}
+    .folder-link::after,.about-toggle::after{content:"↗";margin-left:auto;color:#90677a;font-size:18px;transition:transform .2s}
+    .folder-link:hover::after,.about-toggle:hover::after{transform:translate(2px,-2px)}
+    .about-toggle{display:flex;text-align:left}
+    .folder-link-about .folder-icon{filter:drop-shadow(0 8px 8px rgba(91,60,150,.2))}
+    .folder-link-about .folder-icon::before{background:linear-gradient(145deg,#d8c5ff,#a982eb 62%,#9164d4)}
+    .folder-link-about .folder-icon::after{background:linear-gradient(145deg,rgba(255,255,255,.46),transparent 55%),linear-gradient(145deg,#c6a4ff,#956adf 68%,#8055c8);box-shadow:inset 0 2px 2px rgba(255,255,255,.66),inset 0 -2px 0 rgba(85,50,142,.16)}
+    .desktop-dock{position:relative;z-index:5;width:min(680px,100%);min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:14px;margin:22px auto 0;padding:8px 18px;border:1px solid rgba(255,255,255,.78);border-radius:16px;background:rgba(255,253,250,.58);backdrop-filter:blur(16px);box-shadow:0 12px 36px rgba(117,66,86,.1);color:#51454b;font-size:11px}
+    .dock-identity{display:flex;align-items:center;gap:9px;font-weight:600;white-space:nowrap}
+    .dock-indicator{width:8px;height:8px;border-radius:50%;background:#a777bc;box-shadow:0 0 0 4px rgba(167,119,188,.13)}
+    .dock-contact{padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.55);color:#75536c;font-size:10px;white-space:nowrap;transition:background .2s}
+    .dock-contact:hover{background:rgba(255,255,255,.9)}
+    .about-scrim[hidden],.profile-panel[hidden]{display:none}
+    .about-scrim{position:fixed;z-index:19;inset:0;background:rgba(40,29,34,.35);backdrop-filter:blur(4px)}
+    .profile-panel{position:fixed;z-index:20;top:50%;left:50%;width:min(600px,calc(100vw - 36px));max-height:min(82svh,760px);overflow:auto;padding:34px;background:rgba(255,253,250,.98);border:1px solid rgba(80,60,58,.12);border-radius:14px;box-shadow:0 28px 80px rgba(54,34,42,.28);transform:translate(-50%,-50%)}
+    .profile-top{display:flex;align-items:flex-end;gap:24px;margin-bottom:24px}
+    .portrait{width:130px;aspect-ratio:1/1.18;object-fit:cover;object-position:center 35%;border-radius:80px 80px 18px 18px;box-shadow:0 16px 40px rgba(58,40,41,.12)}
+    .profile-name{font-size:26px;line-height:1.1;font-weight:550}
+    .profile-role{margin-top:7px;color:#6a615e;font-size:12px}
+    .profile-grid{display:grid;gap:17px}
+    .profile-block{display:grid;grid-template-columns:120px 1fr;gap:16px;border-top:1px solid rgba(80,60,58,.14);padding-top:13px}
+    .profile-block h3{margin:0;color:#a94f65;font-size:11px;font-weight:700}
+    .profile-block p{margin:0;color:#554f4d;font-size:12px;line-height:1.8}
+    .about-close{position:absolute;top:13px;right:17px;padding:5px 0;border:0;background:none;color:#74394b;font-size:12px;cursor:pointer}
+    .about-close:hover{text-decoration:underline}
+    body.modal-open{overflow:hidden}
+    @keyframes open-profile{from{opacity:0;transform:translate(-50%,-48%) scale(.98)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+    .profile-panel.open{animation:open-profile .3s ease both}
+    @media(max-width:760px){
+      .hero{padding:max(18px,env(safe-area-inset-top)) 16px max(20px,env(safe-area-inset-bottom))}
+      .topline{font-size:9px}
+      .desktop-space{width:100%;margin-top:22px}
+      .center-folder{width:min(78vw,440px);height:clamp(260px,37vh,320px);margin:18px auto 42px}
+      .center-folder-copy{inset:29% 8% 9%}
+      .center-folder-copy .eyebrow{font-size:9px;margin-bottom:10px}
+      .center-folder-copy h1{font-size:clamp(27px,7.5vw,42px)}
+      .center-folder-copy p{font-size:12px;margin-top:10px}
+      .idea-card{top:-1%;width:clamp(92px,25vw,120px);min-height:64px;padding:8px 10px}
+      .idea-card strong{font-size:13px}
+      .idea-card span{font-size:8px}
+      .idea-card-design{left:0}
+      .idea-card-plan{top:-9%}
+      .idea-card-make{right:0}
+      .portfolio-nav{gap:10px;width:min(520px,100%)}
+      .folder-link,.about-toggle{min-height:78px;padding:9px 16px;gap:14px;border-radius:15px;font-size:11px}
+      .folder-icon{width:76px;height:56px;flex:0 0 76px}
+      .folder-icon::before{height:17px;border-radius:8px 8px 0 0}
+      .folder-icon::after{inset:11px 0 0}
+      .folder-link-copy strong{font-size:13px}
+      .folder-link-copy small{font-size:9px}
+      .desktop-dock{width:min(520px,100%);min-height:44px;margin-top:18px;padding:7px 10px}
+      .dock-identity{gap:7px;font-size:9px}
+      .dock-contact{padding:5px 7px;font-size:9px}
+      .profile-panel{width:min(600px,calc(100vw - 28px));max-height:min(88svh,760px);padding:28px 20px}
+      .profile-top{align-items:center;gap:18px}
+      .portrait{width:90px}
+      .profile-name{font-size:22px}
+      .profile-block{grid-template-columns:1fr;gap:5px}
+      .about-close{top:12px;right:16px;min-width:44px;min-height:44px}
+    }
+    @media(max-width:390px){
+      .center-folder{width:min(82vw,380px);height:270px}
+      .center-folder-copy h1{font-size:clamp(25px,7.2vw,30px)}
+      .idea-card{width:clamp(86px,24vw,104px);min-height:60px;padding:8px}
+      .idea-card span{line-height:1.25}
+      .folder-link,.about-toggle{min-height:72px}
+      .folder-icon{width:66px;height:50px;flex-basis:66px}
+      .dock-identity{font-size:8px}
+    }
+    @media(max-width:360px){
+      .topline{gap:6px;font-size:8px}
+      .topline span:last-child{text-align:right;white-space:nowrap}
+      .desktop-dock{gap:8px;padding-inline:8px}
+      .dock-contact{padding-inline:6px;font-size:8px}
+    }
+    @media(hover:none){
+      .folder-link:hover,.about-toggle:hover{transform:none;background:rgba(255,253,250,.72);box-shadow:0 10px 28px rgba(117,66,86,.06)}
+      .folder-link:active,.about-toggle:active{transform:none;background:rgba(255,253,250,.88)}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.folder-link,.about-toggle,.profile-panel.open,.idea-card{transition:none;animation:none}}
+  
+    .center-folder{margin-bottom:28px;height:clamp(290px,38vh,350px)}
+    .center-folder-copy{inset:24% 7% 9%}
+    .center-folder-copy .hero-kicker{margin:0 0 12px;font-size:clamp(15px,1.5vw,20px);font-weight:500;letter-spacing:-.025em}
+    .center-folder-copy h1{font-size:clamp(32px,3.7vw,48px);line-height:1.3;font-weight:650;letter-spacing:-.05em}
+    .hero-intro{margin:0 0 26px;text-align:center;color:#66545d;font-size:16px;line-height:1.8;word-break:keep-all}
+    .hero-intro strong{color:var(--ink);font-weight:650}
+    .folder-link-copy strong{font-size:17px}
+    .folder-link-copy small{font-size:13px;color:#695b61}
+    .topline{font-size:12px}
+    .idea-card span{font-size:11px;line-height:1.5}
+    .desktop-dock{font-size:12px}
+    .dock-contact{font-size:12px;min-height:44px;display:inline-flex;align-items:center}
+    .portrait-wrap{position:relative;width:130px;aspect-ratio:1/1.18;flex-shrink:0;overflow:hidden;border-radius:80px 80px 18px 18px;background:linear-gradient(145deg,#f7d4e0,#e9dff4)}
+    .portrait{position:relative;display:block;width:100%;height:100%;border-radius:inherit;box-shadow:none}
+    .portrait[hidden]{display:none}
+    .profile-intro{margin:0 0 24px;font-size:14px;line-height:1.9;color:#554f4d;word-break:keep-all}
+    .profile-block h3{font-size:13px}
+    .profile-block p,.profile-role{font-size:14px}
+    .career-list{display:grid;gap:13px}
+    .career-list strong{font-weight:650;color:#30282a}
+    .about-close{min-width:44px;min-height:44px;font-size:14px}
+    @media(max-width:760px){
+      .topline{font-size:11px;letter-spacing:0}
+      .center-folder{width:min(86vw,440px);height:280px;margin:24px auto 24px}
+      .center-folder-copy{inset:27% 5% 8%}
+      .center-folder-copy .eyebrow{font-size:10px}
+      .center-folder-copy .hero-kicker{font-size:15px;margin-bottom:10px}
+      .center-folder-copy h1{font-size:clamp(27px,7.4vw,38px)}
+      .idea-card{width:clamp(88px,25vw,120px);min-height:70px}
+      .idea-card span{font-size:11px}
+      .hero-intro{font-size:14px;margin-bottom:22px;padding:0 4px}
+      .folder-link,.about-toggle{min-height:84px;padding:12px 14px;gap:12px}
+      .folder-icon{width:62px;height:48px;flex-basis:62px}
+      .folder-link-copy strong{font-size:16px}
+      .folder-link-copy small{font-size:12px;line-height:1.6}
+      .desktop-dock{flex-wrap:wrap;justify-content:center;gap:4px 12px}
+      .dock-identity{font-size:12px;white-space:normal}
+      .dock-contact{font-size:12px}
+      .portrait-wrap{width:90px}
+      .profile-role{font-size:13px}
+    }
+    @media(max-width:360px){
+      .topline{font-size:10px}
+      .folder-link,.about-toggle{gap:10px;padding-inline:12px}
+      .folder-icon{width:50px;flex-basis:50px}
+      .folder-link-copy strong{font-size:15px}
+      .folder-link-copy small{font-size:12px}
+      .center-folder-copy h1{font-size:26px}
+    }
+    @media(max-width:760px){
+      .hero{min-height:100svh;padding-inline:max(14px,env(safe-area-inset-left)) max(14px,env(safe-area-inset-right))}
+      .topline{align-items:flex-start;gap:8px;font-size:clamp(9px,2.6vw,11px);letter-spacing:0}
+      .topline span:last-child{text-align:right;white-space:nowrap}
+      .desktop-space{margin-top:clamp(18px,5vh,30px)}
+      .center-folder{width:min(86vw,440px);height:clamp(250px,36svh,300px);margin:22px auto 22px}
+      .center-folder-copy{inset:27% 6% 8%}
+      .center-folder-copy .eyebrow{font-size:clamp(8px,2.5vw,10px);letter-spacing:.14em}
+      .center-folder-copy .hero-kicker{font-size:15px}
+      .center-folder-copy h1{font-size:clamp(25px,7.2vw,36px);line-height:1.3;overflow-wrap:anywhere}
+      .idea-card{width:clamp(82px,24vw,112px);min-height:64px;padding:8px 9px}
+      .idea-card strong{font-size:13px}
+      .idea-card span{font-size:clamp(8px,2.4vw,10px);line-height:1.35}
+      .portfolio-nav{width:100%;gap:10px}
+      .folder-link,.about-toggle{min-height:76px;padding:10px 12px;gap:12px;border-radius:15px}
+      .folder-icon{width:58px;height:48px;flex-basis:58px}
+      .folder-link-copy{min-width:0}
+      .folder-link-copy strong{font-size:15px}
+      .folder-link-copy small{font-size:11px;line-height:1.45;overflow-wrap:anywhere}
+      .desktop-dock{width:100%;flex-wrap:wrap;justify-content:center;gap:6px 12px;margin-top:16px;padding:9px 10px}
+      .dock-identity{font-size:11px;white-space:normal}
+      .dock-contact{min-height:40px;display:inline-flex;align-items:center;justify-content:center;font-size:11px}
+      .profile-panel{top:50%;left:50%;width:calc(100vw - 24px);max-height:calc(100dvh - max(24px,env(safe-area-inset-top)) - max(24px,env(safe-area-inset-bottom)));overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:max(28px,env(safe-area-inset-top)) 20px max(20px,env(safe-area-inset-bottom));border-radius:18px}
+      .profile-top{align-items:center;gap:16px;margin:0 0 22px;padding-right:44px}
+      .portrait{width:88px}
+      .profile-name{font-size:22px}
+      .profile-role,.profile-block p{font-size:13px;line-height:1.75}
+      .profile-grid{gap:15px}
+      .profile-block{grid-template-columns:1fr;gap:5px;padding-top:12px}
+      .profile-block h3{font-size:12px}
+      .about-close{position:sticky;z-index:2;top:0;float:right;margin:-12px -8px 0 0;min-width:44px;min-height:44px;padding:0;background:rgba(255,253,250,.94);border-radius:999px;font-size:13px}
+    }
+    @media(max-width:380px){
+      .hero{padding-inline:max(12px,env(safe-area-inset-left)) max(12px,env(safe-area-inset-right))}
+      .center-folder{width:min(88vw,360px);height:260px}
+      .center-folder-copy h1{font-size:clamp(24px,7vw,28px)}
+      .idea-card{width:clamp(76px,23vw,90px);min-height:58px;padding:7px}
+      .idea-card strong{font-size:12px}
+      .idea-card span{font-size:8px}
+      .folder-link,.about-toggle{gap:9px;padding-inline:10px}
+      .folder-icon{width:48px;height:44px;flex-basis:48px}
+      .folder-link-copy strong{font-size:14px}
+      .folder-link-copy small{font-size:10px}
+      .profile-panel{width:calc(100vw - 20px);padding-inline:16px}
+      .portrait{width:76px}
+      .profile-top{gap:12px}
+    }
+    @media(hover:none){
+      .folder-link:hover,.about-toggle:hover{transform:none;background:rgba(255,253,250,.72);box-shadow:0 10px 28px rgba(117,66,86,.06)}
+      .folder-link:active,.about-toggle:active{transform:none;background:rgba(255,253,250,.9)}
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" id="about" aria-label="한슬기 디자인 포트폴리오 메인">
+      <div class="topline"><span>한슬기 · 디자이너 포트폴리오</span><span>디자인 작업실　/　2026</span></div>
+      <div class="desktop-space">
+        <div class="center-folder" aria-label="그래픽부터 웹까지,나의 디자인 기록을 열어보세요">
+          <div class="folder-back" aria-hidden="true"></div>
+          <div class="idea-card idea-card-design" aria-hidden="true"><strong>디자인</strong><span>감각을 시각으로</span></div>
+          <div class="idea-card idea-card-plan" aria-hidden="true"><strong>기획</strong><span>생각을 구조로</span></div>
+          <div class="idea-card idea-card-make" aria-hidden="true"><strong>표현</strong><span>아이디어를 경험으로</span></div>
+          <div class="center-folder-copy">
+            <p class="eyebrow">한슬기 · 디자인 포트폴리오 2026</p>
+            <p class="hero-kicker">그래픽부터 웹까지</p>
+            <h1>나의 디자인 기록을<br>열어보세요.</h1>
+          </div>
+        </div>
+        <p class="hero-intro">정보를 정리하고, 브랜드의 메시지를 전하는<br class="intro-break"> 디자이너 <strong>한슬기</strong>입니다.</p>
+        <nav class="portfolio-nav" aria-label="포트폴리오 메뉴">
+          <a class="folder-link folder-link-graphic" href="graphic.html" aria-label="그래픽 디자인 포트폴리오 보기">
+            <span class="folder-icon" aria-hidden="true"></span><span class="folder-link-copy"><strong>그래픽 디자인</strong><small>키비주얼 · 포스터 · 옥외광고</small></span>
+          </a>
+          <a class="folder-link folder-link-editorial" href="editorial.html" aria-label="편집 디자인 포트폴리오 보기">
+            <span class="folder-icon" aria-hidden="true"></span><span class="folder-link-copy"><strong>편집 디자인</strong><small>카탈로그 · 브로슈어</small></span>
+          </a>
+          <a class="folder-link folder-link-digital" href="digital.html" aria-label="디지털 디자인 포트폴리오 보기">
+            <span class="folder-icon" aria-hidden="true"></span><span class="folder-link-copy"><strong>디지털 디자인</strong><small>홈페이지 · 상세페이지 · SNS 콘텐츠</small></span>
+          </a>
+          <button class="about-toggle folder-link-about" id="aboutToggle" type="button" aria-expanded="false" aria-controls="aboutDetails">
+            <span class="folder-icon" aria-hidden="true"></span><span class="folder-link-copy"><strong>프로필</strong><small>디자이너 한슬기를 소개합니다</small></span>
+          </button>
+        </nav>
+        <div class="desktop-dock">
+          <span class="dock-identity"><span class="dock-indicator" aria-hidden="true"></span>한슬기　·　그래픽 · 편집 · 웹 디자이너</span>
+          <a class="dock-contact" href="mailto:s_sg_h@naver.com">이메일 보내기 ↗</a>
+        </div>
+      </div>
+      <div class="about-scrim" id="aboutScrim" hidden></div>
+      <aside class="profile-panel" id="aboutDetails" role="dialog" aria-modal="true" aria-label="한슬기 프로필 및 디자인 역량" aria-hidden="true" hidden>
+        <button class="about-close" id="aboutClose" type="button">닫기 ×</button>
+        <div class="profile-top">
+          <div class="portrait-wrap"><img class="portrait" src="assets/profile.png" alt="한슬기 프로필 이미지" /></div>
+          <div><div class="profile-name">한슬기</div><div class="profile-role">그래픽 · 편집 · 웹 디자이너</div></div>
+        </div>
+        <div class="profile-grid">
+          <div class="profile-block"><h3>디자인 역량</h3><p>포토샵 — 이미지 보정 · 합성 · 콘텐츠 디자인<br>일러스트레이터 — 키비주얼 · 그래픽 · 벡터 디자인<br>인디자인 — 카탈로그 · 브로슈어 · 편집 레이아웃</p></div>
+          <div class="profile-block"><h3>웹디자인</h3><p>HTML / CSS — 웹 화면 구조 이해 · 스타일 구현<br>비주얼 스튜디오 코드 — 웹페이지 수정 · 퍼블리싱</p></div>
+          <div class="profile-block"><h3>자격증</h3><p>2026.04 웹디자인개발기능사<br>2024.04 그래픽스운용기능사<br>2023.09 GTQ포토샵 1급<br>2018.10 2종보통 자동차운전면허</p></div>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <script>
+    const aboutToggle=document.getElementById('aboutToggle');
+    const aboutDetails=document.getElementById('aboutDetails');
+    const aboutClose=document.getElementById('aboutClose');
+    const aboutScrim=document.getElementById('aboutScrim');
+
+    const portrait=document.querySelector('.portrait');
+    portrait.addEventListener('error',()=>{portrait.hidden=true;});
+    if(portrait.complete && portrait.naturalWidth===0)portrait.hidden=true;
+
+    function closeAbout(){
+      aboutDetails.hidden=true;
+      aboutDetails.classList.remove('open');
+      aboutDetails.setAttribute('aria-hidden','true');
+      aboutScrim.hidden=true;
+      aboutToggle.setAttribute('aria-expanded','false');
+      document.body.classList.remove('modal-open');
+      aboutToggle.focus();
+    }
+
+    aboutToggle.addEventListener('click',()=>{
+      aboutDetails.hidden=false;
+      aboutDetails.setAttribute('aria-hidden','false');
+      aboutDetails.classList.add('open');
+      aboutScrim.hidden=false;
+      aboutToggle.setAttribute('aria-expanded','true');
+      document.body.classList.add('modal-open');
+      aboutClose.focus();
+    });
+    aboutClose.addEventListener('click',closeAbout);
+    aboutScrim.addEventListener('click',closeAbout);
+    document.addEventListener('keydown',event=>{
+      if(aboutDetails.hidden)return;
+      if(event.key==='Escape')closeAbout();
+      if(event.key==='Tab'){
+        const focusable=[...aboutDetails.querySelectorAll('button,a[href],input,select,textarea,[tabindex="0"]')].filter(el=>!el.disabled);
+        const first=focusable[0],last=focusable[focusable.length-1];
+        if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+        else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+      }
+    });
+  </script>
+</body>
+</html>
